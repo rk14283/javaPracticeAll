@@ -11,18 +11,16 @@ public class FindMaxInt {
 		System.out.print("Please, enter integer numbers separated by space: ");
 		
 		List<String> result = new ArrayList<>();
-		ArrayList<Integer> numbers = new ArrayList<Integer>();
 		while (scan.hasNext()) {
 			
 		    result.add(scan.nextLine().trim());
-		    //numbers.add(Integer.parseInt(scan.nextLine().trim()));
+		    
 		   
 		    
-		  
-		    
 		    for (String num : result) {
-		    	System.out.println(num);
+		    	
 		    	String[] split = num.split(" ");
+		    	 
 		    	int[] nums = new int[split.length];
 		    	//System.out.println(split.length); 
 		    	for (int i = 0; i < split.length; i++) {
@@ -31,55 +29,53 @@ public class FindMaxInt {
 		          
 		    	}
 		    	
-		    	for (int integer: nums) {
-		    		System.out.print(integer);
-		    	}
+		    
+		    	System.out.println("*** Initial Array ***");
+		    	System.out.println(Arrays.toString(nums));
+
+		    	System.out.println("*** Max number in array ***");
+		    	
+		    	System.out.println(findMaxIntInArray(nums)); 
 		    	 
 		    	
 		    	
 		    }
 		    
+		    
 		}
-		   
-				 
-				 
-			/*	 
-		    for (String num : result) {
-					  Integer neki = Integer.parseInt(num);
-					  
-					  numbers.add(neki); 
-					  System.out.print(numbers); 
-			            
-			        }
-				*/  
-			
 		
-		
-		
-		
-		/*
-		
-		double[] arr = Arrays.stream(scan.nextLine()
-                .trim()
-                .split(" "))
-                .filter(x -> !x.equals(""))
-                .mapToDouble(Double::parseDouble)
-                .toArray();
-          for(double each: arr){
-        	  System.out.print(each + "  ");
-        	  }
-	    */
 	
-		System.out.println("*** Initial Array ***");
-		//System.out.println(Arrays.toString(intArray));
-		System.out.println("*** Max number in array ***");
-	//	System.out.println(maxInt);
+		
+		
+    	
+    	
 	}
 
 	
 	public static int findMaxIntInArray(int[] intArray) {
-		return 5; 
+		
+		 // Initialize maximum element 
+        int max = intArray[0]; 
+        
+      	// Traversing and comparing max element
+        for (int i = 1; i < intArray.length; i++) {
+        
+         // If current element is greater than max
+            if (intArray[i] > max) {
+            
+                // Then update max element
+                max = intArray[i]; 
+            }
+        }
+        
+        return max; 
+        
+		
 	}
+	
+
+
+
 	
 	
 }
